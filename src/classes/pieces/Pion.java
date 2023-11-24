@@ -6,10 +6,15 @@ import classes.Position;
 import interfaces.Piece;
 
 public class Pion implements Piece {
-    Position position;
+    int[] position = new int[2];
+
+    // public Pion(int[] _position){
+    public Pion(){
+        // position = _position;
+    }
 
     @Override
-    public void setPosition(Position position) {
+    public void setPosition(int[] position) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setPosition'");
     }

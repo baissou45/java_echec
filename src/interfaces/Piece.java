@@ -6,6 +6,6 @@ import java.util.List;
 import classes.Position;
 
 public interface Piece {
-    public void setPosition(Position position);
+    public void setPosition(int[] position);
     public List<Position> deplacements(Position position);
 }
