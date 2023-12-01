@@ -3,7 +3,6 @@ package classes;
 import java.util.HashMap;
 
 import classes.pieces.Pion;
-import enums.CouleurEnum;
 import interfaces.Piece;
 
 public class Partie {
@@ -12,30 +11,30 @@ public class Partie {
         HashMap<int[], Piece> pieces_joueur_1 = new HashMap<int[], Piece>();
         HashMap<int[], Piece> pieces_joueur_2 = new HashMap<int[], Piece>();
 
-        plateau[0][0] = new Pion(); // Initialisation des Tours
-        plateau[0][7] = new Pion(); // Initialisation des Tours
-        plateau[7][0] = new Pion(); // Initialisation des Tours
-        plateau[7][7] = new Pion(); // Initialisation des Tours
+        plateau[0][0] = new Pion('t'); // Initialisation des Tours
+        plateau[0][7] = new Pion('t'); // Initialisation des Tours
+        plateau[7][0] = new Pion('t'); // Initialisation des Tours
+        plateau[7][7] = new Pion('t'); // Initialisation des Tours
 
-        plateau[0][1] = new Pion(); // Initialisation des chevaliers
-        plateau[0][6] = new Pion(); // Initialisation des chevaliers
-        plateau[7][1] = new Pion(); // Initialisation des chevaliers
-        plateau[7][6] = new Pion(); // Initialisation des chevaliers
+        plateau[0][1] = new Pion('c'); // Initialisation des chevaliers
+        plateau[0][6] = new Pion('c'); // Initialisation des chevaliers
+        plateau[7][1] = new Pion('c'); // Initialisation des chevaliers
+        plateau[7][6] = new Pion('c'); // Initialisation des chevaliers
 
-        plateau[0][2] = new Pion(); // Initialisation des fous
-        plateau[0][5] = new Pion(); // Initialisation des fous
-        plateau[7][2] = new Pion(); // Initialisation des fous
-        plateau[7][5] = new Pion(); // Initialisation des fous
+        plateau[0][2] = new Pion('f'); // Initialisation des fous
+        plateau[0][5] = new Pion('f'); // Initialisation des fous
+        plateau[7][2] = new Pion('f'); // Initialisation des fous
+        plateau[7][5] = new Pion('f'); // Initialisation des fous
 
-        plateau[0][3] = new Pion(); // Initialisation des Rennes
-        plateau[7][3] = new Pion(); // Initialisation des Rennes
+        plateau[0][3] = new Pion('r'); // Initialisation des Rennes
+        plateau[7][3] = new Pion('r'); // Initialisation des Rennes
 
-        plateau[0][4] = new Pion(); // Initialisation des Rois
-        plateau[7][4] = new Pion(); // Initialisation des Rois
+        plateau[0][4] = new Pion('R'); // Initialisation des Rois
+        plateau[7][4] = new Pion('R'); // Initialisation des Rois
 
         for (int i = 0; i < 8; i++) {
-            plateau[1][i] = new Pion(); // Initialisation des Pions du joueur 1
-            plateau[6][i] = new Pion(); // Initialisation des Pions du joueur 2
+            plateau[1][i] = new Pion('p'); // Initialisation des Pions du joueur 1
+            plateau[6][i] = new Pion('p'); // Initialisation des Pions du joueur 2
         }
 
         for (int i = 0; i < 8; i++) {
@@ -65,7 +64,7 @@ public class Partie {
     public void show(Piece[][] plateau){
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                System.out.print(plateau[i][j] == null ? " - " : " # ");
+                System.out.print(plateau[i][j] == null ? " - " : " " + plateau[i][j].getType() + " ");
             }
             System.out.print("\n");
         }
